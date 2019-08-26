@@ -82,7 +82,7 @@ and install packages and test/curl locally
     nmap localhost
     curl -v localhost:8080
     
-Note: You will notice that [image](https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/blob/master/hello-app/Dockerfile) "gcr.io/google-samples/hello-app:2.0" was defined with port 8080 after doing the nmap and doing a curl -v localhost will give you an error.
+Note: You will notice that [image](https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/blob/master/hello-app/Dockerfile) "gcr.io/google-samples/hello-app:2.0" was defined with port 8080 after doing the nmap and doing a `curl -v localhost` only will give you an error.
 
 # Exposing using clusterIP
 
