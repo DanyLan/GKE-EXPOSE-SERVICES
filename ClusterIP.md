@@ -100,7 +100,7 @@ Curl from my-deployment pod
 
     curl 10.12.7.114
 
-Through `kubectl apply`
+Through `kubectl create`
 
 Here is a manifest for a service of type ClusterIP:
 
