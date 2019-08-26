@@ -100,7 +100,26 @@ Curl from my-deployment pod
 
     curl 10.12.7.114
 
+Through `kubectl apply`
 
+Here is a manifest for a service of type ClusterIP:
+
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: my-cip-service
+    spec:
+      type: ClusterIP
+      selector:
+        app: metrics
+        department: sales
+      ports:
+      - protocol: TCP
+        port: 80
+        targetPort: 8080
+    
+    
+    
 
 
 
