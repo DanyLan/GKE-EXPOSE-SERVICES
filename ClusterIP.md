@@ -59,7 +59,7 @@ Check nginx pods
 
 Now we will check whether the above pods are working locally before testing interpod communication.
 
-Exec in your pods this way
+Exec in the nginx pod this way
 
     kubectl exec -it nginx-dbddb74b8-6slmz -- sh
 
@@ -70,7 +70,37 @@ and install packages and test/curl locally
     apt-get install nmap
     nmap localhost
     curl -v localhost
+   
+Exec in the my-deployment pod this way
+
+    kubectl exec -it my-deployment-7bc95fb476-s4t44 -- sh
+
+and install packages and test/curl locally
+
+    apk add --no-cache nmap
+    apk add --no-cache curl
+    nmap localhost
+    curl -v localhost:8080
     
+Note: You will notice that image "gcr.io/google-samples/hello-app:2.0" was defined with port 8080 after doing the nmap and doing a curl -v localhost will give you an error.
+
+# Exposing using clusterIP
+
+Through console, go to 
+
+`Menu>Kubernetes Engine>Workloads>nginx>Actions>Expose>Service type: Cluster IP.`
+
+Get the Cluster IP this way
+
+    kubectl get svc
+    kubernetes    ClusterIP   10.12.0.1     <none>        443/TCP   3d
+    nginx-rwgnr   ClusterIP   10.12.7.114   <none>        80/TCP    3m41s
+    
+Curl from my-deployment pod
+
+    curl 10.12.7.114
+
+
 
 
 
