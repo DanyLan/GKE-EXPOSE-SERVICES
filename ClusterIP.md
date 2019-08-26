@@ -118,10 +118,18 @@ Here is a manifest for a service of type ClusterIP:
         port: 80
         targetPort: 8080
     
-    
-    
+ Get cluster-IP
+ 
+     kubectl get svc
+     kubernetes       ClusterIP   10.12.0.1     <none>        443/TCP   3d
+     my-cip-service   ClusterIP   10.12.6.178   <none>        80/TCP    7s
+     nginx-rwgnr      ClusterIP   10.12.7.114   <none>        80/TCP    13m
 
+Curl from nginx pod
 
+    curl -v 10.12.6.178
+
+Notite that we did not use port 8080 as we are exposing 80 in manifest file
 
 
 
