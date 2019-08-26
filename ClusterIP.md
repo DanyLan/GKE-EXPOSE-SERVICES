@@ -88,7 +88,7 @@ Note: You will notice that image "gcr.io/google-samples/hello-app:2.0" was defin
 
 Through console, go to 
 
-`Menu>Kubernetes Engine>Workloads>nginx>Actions>Expose>Service type: Cluster IP.`
+    Menu>Kubernetes Engine>Workloads>nginx>Actions>Expose>Service type: Cluster IP.
 
 Get the Cluster IP this way
 
