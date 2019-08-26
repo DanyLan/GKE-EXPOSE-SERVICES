@@ -2,7 +2,7 @@
 
 A ClusterIP service is the default Kubernetes service. It gives you a service inside your cluster that other apps inside the cluster can communicate. Keep in mind that there is no external access.
 
-We are going to create two deployments and check communication between them.
+We are going to create two deployments and check inter pod communication.
 
 # Deployment 1
 
