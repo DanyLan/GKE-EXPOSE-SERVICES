@@ -134,7 +134,7 @@ Curl from nginx pod
 
     curl -v 10.12.6.178
 
-Note that that we did not use port `:8080` as we have exposed port 80 in manifest file
+Note that that we did not need to add this part `:8080` as we have exposed port 80 in manifest file
 
 
 
