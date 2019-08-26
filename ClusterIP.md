@@ -117,6 +117,9 @@ Here is a manifest for a service of type ClusterIP:
       - protocol: TCP
         port: 80
         targetPort: 8080
+        
+    nano my-cip-service.yaml
+    kubectl create of my-cip-service.yaml
     
  Get cluster-IP
  
