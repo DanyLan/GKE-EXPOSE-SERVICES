@@ -35,7 +35,7 @@ Here is the manifest for a deployment
 
 From the deployment, we are telling the container to listen on port 50000.
 
-Copy manifest to a file name my-deployment.yaml and create the deployment:
+Copy manifest to a file name `my-deployment.yaml` and create the deployment:
 
     kubectl apply -f my-deployment.yaml
     
