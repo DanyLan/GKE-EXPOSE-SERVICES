@@ -4,8 +4,6 @@ A ClusterIP service is the default Kubernetes service. It gives you a service in
 
 We are going to create two deployments and check inter pod communication.
 
-![](https://miro.medium.com/max/1047/1*CdyUtG-8CfGu2oFC5s0KwA.png)
-
 ![](https://i.stack.imgur.com/1owA5.jpg)
 
 # Deployment 1
