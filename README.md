@@ -9,6 +9,3 @@ The five types of Services are
 - ExternalName
 - Headless
 
-
-
-![](https://www.edureka.co/community/?qa=blob&qa_blobid=5351364249810994154)
