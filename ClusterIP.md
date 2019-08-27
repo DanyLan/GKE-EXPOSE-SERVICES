@@ -4,7 +4,7 @@ A ClusterIP service is the default Kubernetes service. It gives you a service in
 
 We are going to create two deployments and check inter pod communication.
 
-![](https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.stack.imgur.com%2F1owA5.jpg&imgrefurl=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F41509439%2Fwhats-the-difference-between-clusterip-nodeport-and-loadbalancer-service-types&docid=aGmtxokuj_nCeM&tbnid=YP5bfYSgcH3OXM%3A&vet=10ahUKEwiXxtfAoqPkAhX0CTQIHeZZCO8QMwhRKAEwAQ..i&w=638&h=359&bih=953&biw=1920&q=clusterIP%20diagrams&ved=0ahUKEwiXxtfAoqPkAhX0CTQIHeZZCO8QMwhRKAEwAQ&iact=mrc&uact=8)
+![](https://miro.medium.com/max/1047/1*CdyUtG-8CfGu2oFC5s0KwA.png)
 
 # Deployment 1
 
