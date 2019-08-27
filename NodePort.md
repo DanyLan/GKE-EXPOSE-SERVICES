@@ -32,3 +32,31 @@ Here is the manifest for a deployment
             env:
             - name: "PORT"
               value: "50000"
+
+From the deployment, we are telling the container to listen on port 50000.
+
+Copy manifest to a file name my-deployment.yaml and create the deployment:
+
+    kubectl apply -f my-deployment.yaml
+    
+Here is a manifest for a Service of type NodePort whetr targetPort is 50000:
+
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: my-np-service
+    spec:
+      type: NodePort
+      selector:
+        app: metrics
+        department: engineering
+      ports:
+      - protocol: TCP
+        port: 80
+        targetPort: 50000
+        
+ Copy the manifest to a file named my-np-service.yaml, and create the Service:
+ 
+     kubectl apply -f my-np-service.yaml
+     
+ 
