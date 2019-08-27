@@ -48,7 +48,7 @@ Check created pods
     
 # Deployment 2
 
-kubectl run nginx --image=nginx
+`kubectl run nginx --image=nginx`
 
 Check nginx pods
 
