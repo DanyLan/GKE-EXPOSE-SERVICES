@@ -6,6 +6,29 @@ A NodePort service is the most primitive way to get external traffic directly to
 
 ![](https://www.edureka.co/community/?qa=blob&qa_blobid=5351364249810994154)
 
+# Creating a Service of type NodePort
 
+Here is the manifest for a deployment
 
-
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: my-deployment-50000
+    spec:
+      selector:
+        matchLabels:
+          app: metrics
+          department: engineering
+      replicas: 3
+      template:
+        metadata:
+          labels:
+            app: metrics
+            department: engineering
+        spec:
+          containers:
+          - name: hello
+            image: "gcr.io/google-samples/hello-app:2.0"
+            env:
+            - name: "PORT"
+              value: "50000"
