@@ -80,7 +80,7 @@ You will notice that the port the pod is listening on is the targetPort 50000. W
     kubernetes      ClusterIP   10.12.0.1     <none>        443/TCP        5d2h
     my-np-service   NodePort    10.12.1.114   <none>        80:30887/TCP   4h39m
     
-    
+![](https://github.com/DanyLan/GKE-EXPOSE-SERVICES/blob/master/Port-NodePort-TargetPort.png)
  
 Keep in mind that creating a Service of type NodePort also exposes your service with a ClusterIP as shown below
 
