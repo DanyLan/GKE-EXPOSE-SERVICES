@@ -111,3 +111,13 @@ Find the external IP address of your nodes
     gke-standard-cluster-1-default-pool-f3abacde-b0hx   Ready    <none>   6d1h   v1.12.8-gke.10   10.128.15.229   35.194.41.135       Container-Optimized OS from Google   4.14.127+        docker://17.3.2
     gke-standard-cluster-1-default-pool-f3abacde-rmdb   Ready    <none>   6d1h   v1.12.8-gke.10   10.128.15.230   35.224.50.144       Container-Optimized OS from Google   4.14.127+        docker://17.3.2
  
+Now check where the pods are located
+
+    kubectl get pods -o wide
+    
+    NAME                                   READY   STATUS    RESTARTS   AGE   IP          NODE                                                NOMINATED NODE   READINESS GATES
+    my-deployment-50000-775f57d44c-27x4g   1/1     Running   0          47h   10.8.1.10   gke-standard-cluster-1-default-pool-f3abacde-rmdb   <none>           <none>
+    my-deployment-50000-775f57d44c-29hlc   1/1     Running   0          47h   10.8.1.8    gke-standard-cluster-1-default-pool-f3abacde-rmdb   <none>           <none>
+    my-deployment-50000-775f57d44c-cszjt   1/1     Running   0          47h   10.8.1.9    gke-standard-cluster-1-default-pool-f3abacde-rmdb   <none>           <none>
+    
+They are all located on the same node `gke-standard-cluster-1-default-pool-f3abacde-rmdb` with externa IP `35.224.50.144`
