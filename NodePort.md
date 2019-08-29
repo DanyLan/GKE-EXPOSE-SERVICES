@@ -104,6 +104,8 @@ Keep in mind that creating a Service of type NodePort also exposes your service 
       loadBalancer: {}
       ...
 
+Find the external IP address of your nodes
 
+    kubectl get nodes -o wide
 
  
