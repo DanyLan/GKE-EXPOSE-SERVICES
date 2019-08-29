@@ -107,5 +107,7 @@ Keep in mind that creating a Service of type NodePort also exposes your service 
 Find the external IP address of your nodes
 
     kubectl get nodes -o wide
-
+    NAME                                                STATUS   ROLES    AGE    VERSION          INTERNAL-IP     EXTERNAL-IP     OS-IMAGE                             KERNEL-VERSION   CONTAINER-RUNTIME
+    gke-standard-cluster-1-default-pool-f3abacde-b0hx   Ready    <none>   6d1h   v1.12.8-gke.10   10.128.15.229   35.194.41.135       Container-Optimized OS from Google   4.14.127+        docker://17.3.2
+    gke-standard-cluster-1-default-pool-f3abacde-rmdb   Ready    <none>   6d1h   v1.12.8-gke.10   10.128.15.230   35.224.50.144       Container-Optimized OS from Google   4.14.127+        docker://17.3.2
  
