@@ -119,4 +119,15 @@ Now to expose and test externally, create a firewall rule to allow TCP traffic o
 
     gcloud compute firewall-rules create test-node-port --allow tcp:31066
     
-![](https://github.com/DanyLan/GKE-EXPOSE-SERVICES/blob/master/test-node-port.png)
+![](https://github.com/DanyLan/GKE-EXPOSE-SERVICES/blob/master/testnodeport.png)
+
+Access your service this way
+
+In browser enter [No_IP_ADDRESS]:[Node_Port]
+
+`http://35.224.50.144:31066/`
+
+    Hello, world!
+    Version: 2.0.0
+    Hostname: my-deployment-50000-86c6fd8fbd-lk4qw
+
