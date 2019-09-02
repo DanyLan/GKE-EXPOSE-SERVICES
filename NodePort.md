@@ -120,4 +120,4 @@ Now check where the pods are located
     my-deployment-50000-775f57d44c-29hlc   1/1     Running   0          47h   10.8.1.8    gke-standard-cluster-1-default-pool-f3abacde-rmdb   <none>           <none>
     my-deployment-50000-775f57d44c-cszjt   1/1     Running   0          47h   10.8.1.9    gke-standard-cluster-1-default-pool-f3abacde-rmdb   <none>           <none>
     
-They are all located on the same node `gke-standard-cluster-1-default-pool-f3abacde-rmdb` with externa IP `35.224.50.144`
+They are all located on the same node `gke-standard-cluster-1-default-pool-f3abacde-rmdb` with external IP `35.224.50.144`
