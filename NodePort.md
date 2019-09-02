@@ -29,9 +29,7 @@ Here is the manifest for a deployment
           containers:
           - name: hello
             image: "gcr.io/google-samples/hello-app:2.0"
-            env:
-            - name: "PORT"
-              value: "50000"
+           
 
 From the deployment, we are telling the container to listen on port 50000.
 
@@ -52,8 +50,7 @@ Here is a manifest for a Service of type NodePort whetr targetPort is 50000:
         department: engineering
       ports:
       - protocol: TCP
-        port: 80
-        targetPort: 50000
+        port: 8080
         
 Copy the manifest to a file named my-np-service.yaml, and create the Service:
  
@@ -63,22 +60,22 @@ Now exec into a pod and test locally
  
     kubectl get pods
     NAME                                   READY   STATUS    RESTARTS   AGE
-    my-deployment-50000-775f57d44c-27x4g   1/1     Running   0          23h
-    my-deployment-50000-775f57d44c-29hlc   1/1     Running   0          23h
-    my-deployment-50000-775f57d44c-cszjt   1/1     Running   0          23h
+    my-deployment-50000-86c6fd8fbd-h54db   1/1     Running   0          24m
+    my-deployment-50000-86c6fd8fbd-lk4qw   1/1     Running   0          24m
+    my-deployment-50000-86c6fd8fbd-xwwpq   1/1     Running   0          24m
     
     kubectl exec -it my-deployment-50000-775f57d44c-27x4g -- sh
     
     apk add --no-cache nmap
     apk add --no-cache curl
     nmap localhost
-    curl -v localhost:50000
+    curl -v localhost:8080
     
-You will notice that the port the pod is listening on is the targetPort 50000. We mentioned above that that NodePort is used to expose your service externally. In order to view the NodePort [30887] that was assigned, you may run the following command
+You will notice that the port the pod is listening on is the targetPort 8080. We mentioned above that that NodePort is used to expose your service externally. In order to view the NodePort [31066] that was assigned, you may run the following command
 
     kubectl get svc
-    kubernetes      ClusterIP   10.12.0.1     <none>        443/TCP        5d2h
-    my-np-service   NodePort    10.12.1.114   <none>        80:30887/TCP   4h39m
+    kubernetes      ClusterIP   10.12.0.1      <none>        443/TCP          10d
+    my-np-service   NodePort    10.12.10.230   <none>        8080:31066/TCP   72s
     
 ![](https://github.com/DanyLan/GKE-EXPOSE-SERVICES/blob/master/Port-NodePort-TargetPort.png)
  
