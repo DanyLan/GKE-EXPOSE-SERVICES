@@ -121,3 +121,9 @@ Now check where the pods are located
     my-deployment-50000-775f57d44c-cszjt   1/1     Running   0          47h   10.8.1.9    gke-standard-cluster-1-default-pool-f3abacde-rmdb   <none>           <none>
     
 They are all located on the same node `gke-standard-cluster-1-default-pool-f3abacde-rmdb` with external IP `35.224.50.144`
+
+Now to expose and test externally, create a firewall rule to allow TCP traffic on the node port:
+
+    gcloud compute firewall-rules create test-node-port --allow tcp:30877
+    
+![](https://github.com/DanyLan/GKE-EXPOSE-SERVICES/blob/master/test-node-port.png)
