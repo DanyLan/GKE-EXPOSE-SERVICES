@@ -131,3 +131,27 @@ In browser enter [NODE_IP_ADDRESS]:[Node_Port]
     Version: 2.0.0
     Hostname: my-deployment-50000-86c6fd8fbd-lk4qw
 
+# Port, TargetPort and NodePort
+
+A successful request can be made from outside the cluster to the node’s IP address and service’s `nodePort`, forwarded to the service’s `port`, and received on the `targetPort` by the pod.
+
+    kind: Service
+    apiVersion: v1
+    metadata:
+      name: port-example-svc
+    spec:
+      # Make the service externally visible via the node
+      type: NodePort 
+
+      ports:
+        # Which port on the node is the service available through?
+        - nodePort: 31234
+
+        # Inside the cluster, what port does the service expose?
+        - port: 8080
+
+        # Which port do pods selected by this service expose?
+        - targetPort: 
+
+      selector:
+        # ...
