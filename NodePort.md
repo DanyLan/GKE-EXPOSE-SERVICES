@@ -31,13 +31,11 @@ Here is the manifest for a deployment
             image: "gcr.io/google-samples/hello-app:2.0"
            
 
-From the deployment, we are telling the container to listen on port 50000.
-
 Copy manifest to a file name `my-deployment.yaml` and create the deployment:
 
     kubectl apply -f my-deployment.yaml
     
-Here is a manifest for a Service of type NodePort whetr targetPort is 50000:
+Here is a manifest for a Service of type NodePort:
 
     apiVersion: v1
     kind: Service
@@ -71,7 +69,7 @@ Now exec into a pod and test locally
     nmap localhost
     curl -v localhost:8080
     
-You will notice that the port the pod is listening on is the targetPort 8080. We mentioned above that that NodePort is used to expose your service externally. In order to view the NodePort [31066] that was assigned, you may run the following command
+You will notice that the port the pod is listening on is the targetPort 8080 after doing the `nmap localhost`. We mentioned above that that NodePort is used to expose your service externally. In order to view the NodePort [31066] that was assigned, you may run the following command
 
     kubectl get svc
     kubernetes      ClusterIP   10.12.0.1      <none>        443/TCP          10d
@@ -85,13 +83,13 @@ Keep in mind that creating a Service of type NodePort also exposes your service 
 
     ...
     spec:
-      clusterIP: 10.12.1.114
+      clusterIP: 10.12.10.230
       externalTrafficPolicy: Cluster
       ports:
-      - nodePort: 30887
-        port: 80
+      - nodePort: 31066
+        port: 8080
         protocol: TCP
-        targetPort: 50000
+        targetPort: 8080
       selector:
         app: metrics
         department: engineering
@@ -111,11 +109,9 @@ Find the external IP address of your nodes
 Now check where the pods are located
 
     kubectl get pods -o wide
-    
-    NAME                                   READY   STATUS    RESTARTS   AGE   IP          NODE                                                NOMINATED NODE   READINESS GATES
-    my-deployment-50000-775f57d44c-27x4g   1/1     Running   0          47h   10.8.1.10   gke-standard-cluster-1-default-pool-f3abacde-rmdb   <none>           <none>
-    my-deployment-50000-775f57d44c-29hlc   1/1     Running   0          47h   10.8.1.8    gke-standard-cluster-1-default-pool-f3abacde-rmdb   <none>           <none>
-    my-deployment-50000-775f57d44c-cszjt   1/1     Running   0          47h   10.8.1.9    gke-standard-cluster-1-default-pool-f3abacde-rmdb   <none>           <none>
+    my-deployment-50000-86c6fd8fbd-h54db   1/1     Running   0          3m54s   10.8.1.18   gke-standard-cluster-1-default-pool-  f3abacde-rmdb   <none>           <none>
+    my-deployment-50000-86c6fd8fbd-lk4qw   1/1     Running   0          3m54s   10.8.1.17   gke-standard-cluster-1-default-pool-f3abacde-rmdb   <none>           <none>
+    my-deployment-50000-86c6fd8fbd-xwwpq   1/1     Running   0          3m54s   10.8.0.17   gke-standard-cluster-1-default-pool-f3abacde-b0hx   <none>           <none>none>
     
 They are all located on the same node `gke-standard-cluster-1-default-pool-f3abacde-rmdb` with external IP `35.224.50.144`
 
