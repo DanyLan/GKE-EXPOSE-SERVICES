@@ -123,7 +123,7 @@ Now to expose and test externally, create a firewall rule to allow TCP traffic o
 
 Access your service this way
 
-In browser enter [No_IP_ADDRESS]:[Node_Port]
+In browser enter [NODE_IP_ADDRESS]:[Node_Port]
 
 `http://35.224.50.144:31066/`
 
