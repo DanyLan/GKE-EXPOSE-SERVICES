@@ -109,14 +109,14 @@ Find the external IP address of your nodes
 Now check where the pods are located
 
     kubectl get pods -o wide
-    my-deployment-50000-86c6fd8fbd-h54db   1/1     Running   0          3m54s   10.8.1.18   gke-standard-cluster-1-default-pool-  f3abacde-rmdb   <none>           <none>
+    my-deployment-50000-86c6fd8fbd-h54db   1/1     Running   0          3m54s   10.8.1.18   gke-standard-cluster-1-default-pool-f3abacde-rmdb   <none>           <none>
     my-deployment-50000-86c6fd8fbd-lk4qw   1/1     Running   0          3m54s   10.8.1.17   gke-standard-cluster-1-default-pool-f3abacde-rmdb   <none>           <none>
     my-deployment-50000-86c6fd8fbd-xwwpq   1/1     Running   0          3m54s   10.8.0.17   gke-standard-cluster-1-default-pool-f3abacde-b0hx   <none>           <none>none>
     
-They are all located on the same node `gke-standard-cluster-1-default-pool-f3abacde-rmdb` with external IP `35.224.50.144`
+Pod `my-deployment-50000-86c6fd8fbd-h54db` is located at node node `gke-standard-cluster-1-default-pool-f3abacde-rmdb` with external IP `35.224.50.144`
 
 Now to expose and test externally, create a firewall rule to allow TCP traffic on the node port:
 
-    gcloud compute firewall-rules create test-node-port --allow tcp:30877
+    gcloud compute firewall-rules create test-node-port --allow tcp:31066
     
 ![](https://github.com/DanyLan/GKE-EXPOSE-SERVICES/blob/master/test-node-port.png)
