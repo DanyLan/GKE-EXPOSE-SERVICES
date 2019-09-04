@@ -35,4 +35,21 @@ Notice the containers are listening on port 50001
               
     kubectl apply -f my-deployment-50001.yaml
     
+Now exec into a pod and test locally
+
+    kubectl get pods
+    NAME                                   READY   STATUS    RESTARTS   AGE
+    my-deployment-50001-6cc5b9f4d5-9sp8r   1/1     Running   0          23s
+    my-deployment-50001-6cc5b9f4d5-fpg2x   1/1     Running   0          23s
+    my-deployment-50001-6cc5b9f4d5-s22qx   1/1     Running   0          23s
+
+    kubectl exec -it my-deployment-50001-6cc5b9f4d5-9sp8r -- sh
+
+    apk add --no-cache nmap
+    apk add --no-cache curl
+    nmap localhost
+    curl -v localhost:50001
+
+
+    
 
