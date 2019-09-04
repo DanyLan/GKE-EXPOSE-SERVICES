@@ -4,14 +4,14 @@ After building you application, there are five ways to expose it through the con
 The five types of Services are
 
 - [ClusterIP (default)](https://github.com/DanyLan/GKE-EXPOSE-SERVICES/blob/master/ClusterIP.md)
-- NodePort
+- [NodePort](https://github.com/DanyLan/GKE-EXPOSE-SERVICES/blob/master/NodePort.md)
 - LoadBalancer
 - ExternalName
 - Headless
 
-
+# Differences
 
 https://stackoverflow.com/questions/41509439/whats-the-difference-between-clusterip-nodeport-and-loadbalancer-service-types
 
 
-![](https://github.com/DanyLan/GKE-EXPOSE-SERVICES/blob/master/download.jpeg?raw=true)
+
