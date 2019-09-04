@@ -6,7 +6,7 @@ The five types of Services are
 - [ClusterIP (default)](https://github.com/DanyLan/GKE-EXPOSE-SERVICES/blob/master/ClusterIP.md)
 - [NodePort](https://github.com/DanyLan/GKE-EXPOSE-SERVICES/blob/master/NodePort.md)
 - [LoadBalancer](https://github.com/DanyLan/GKE-EXPOSE-SERVICES/blob/master/LoadBalancer.md)
-- ExternalName
+- [ExternalName](https://github.com/DanyLan/GKE-EXPOSE-SERVICES/blob/master/ExternalServices.md)
 - Headless
 
 # Differences
