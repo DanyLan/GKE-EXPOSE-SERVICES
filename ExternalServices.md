@@ -13,12 +13,16 @@ If the external service has a valid domain name and you do not need port remappi
 
 3. Now that we have the IP address, let us create the service
 
-`kind: Service
-apiVersion: v1
-metadata:
- name: mongo
-spec:
- type: ClusterIP
- ports:
- - port: 27017
-   targetPort: 27017`
+       kind: Service
+       apiVersion: v1
+       metadata:
+        name: mongo
+       spec:
+        type: ClusterIP
+        ports:
+        - port: 27017
+          targetPort: 27017
+          
+       kubectl create -f mongoservice.yaml
+ 
+ 
