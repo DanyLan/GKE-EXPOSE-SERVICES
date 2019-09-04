@@ -35,6 +35,41 @@ If the external service has a valid domain name and you do not need port remappi
           ports:
             - port: 27017
           
-      
+To view the endpoint
+
+    kubectl get ep
+
+    NAME         ENDPOINTS             AGE
+    mongo        10.128.15.234:27017   18s
+
+Now to test if `mongo` can reach the server at 10.128.15.234, create an nginx pod and run `wget mongo:27017`
+
+    kubectl run nginx --image=nginx
+    kubectl get pods
+    kubectl exec -it nginx-dbddb74b8-6slmz -- sh
+    
+Install wget
+
+    apt-get update
+    apt-get install wget
+    
+Inside nginx pod expected output is
+
+    --2019-09-04 17:28:33--  http://mongo:27017/
+    Resolving mongo (mongo)... 10.12.2.169
+    Connecting to mongo (mongo)|10.12.2.169|:27017... connected.
+    HTTP request sent, awaiting response... 200 OK
+    Length: 322 [text/html]
+    Saving to: 'index.html.2'
+
+    index.html.2                                                100%[=========================================================================================================================================>]     322  --.-KB/s    in 0s      
+
+    2019-09-04 17:28:33 (25.8 MB/s) - 'index.html.2' saved [322/322]
+
+
+
+
+
+
  
  
