@@ -66,10 +66,18 @@ Inside nginx pod expected output is
 
     2019-09-04 17:28:33 (25.8 MB/s) - 'index.html.2' saved [322/322]
 
+On server side (Vm created above), each wget will return
 
+![](https://github.com/DanyLan/GKE-EXPOSE-SERVICES/blob/master/mongo.png)
 
+If the above fails, make sure to get the Ip address where nginx is located this way
 
+    kubectl get pods -o wide
+    NAME                     READY   STATUS    RESTARTS   AGE   IP          NODE                                                NOMINATED NODE   READINESS GATES
+    nginx-7cdbd8cdc9-v78k5   1/1     Running   0          13m   10.8.1.25   gke-standard-cluster-1-default-pool-f3abacde-rmdb   <none>           <none>
 
+And make sure firewall is set properly
 
+![](https://github.com/DanyLan/GKE-EXPOSE-SERVICES/blob/master/mongofirewall.png)
  
  
