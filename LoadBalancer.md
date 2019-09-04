@@ -2,7 +2,7 @@
 
 A LoadBalancer service is the standard way to expose a service to the internet. On GKE, a Google Cloud controller will configure a [network load balancer](https://cloud.google.com/load-balancing/docs/network/) that will provide you with a single IP address that will forward all traffic to your service. This means you can send almost any kind of traffic to it, like HTTP, TCP, UDP, Websockets, gRPC, and so on.
 
-The downside is that you can only expose one service per LoadBalancer, and you have to pay for a LoadBalancer for each service you want to advertise. In order to by-pass that enter the concept of Ingress.
+The downside is that you can only expose one service per LoadBalancer, and you have to pay for a LoadBalancer for each service you want to advertise. In order to by-pass that enter the concept of [Ingress]().
 
 ![](https://github.com/DanyLan/GKE-EXPOSE-SERVICES/blob/master/Loadbalancer.png)
 
