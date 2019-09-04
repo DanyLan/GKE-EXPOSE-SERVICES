@@ -1,3 +1,3 @@
 # Loadbalancer
 
-![](https://github.com/DanyLan/GKE-EXPOSE-SERVICES/blob/master/LoadBalancer.png)
+![](https://github.com/DanyLan/GKE-EXPOSE-SERVICES/blob/master/Loadbalancer.png)
