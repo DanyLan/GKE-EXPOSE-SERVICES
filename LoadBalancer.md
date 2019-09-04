@@ -82,6 +82,8 @@ Access your service
 
 In your browser enter `http://35.226.54.126:60000` where 35.226.54.126 if the external IP address of the loadbalancer. 
 
-
+    Hello, world!
+    Version: 2.0.0
+    Hostname: my-deployment-50001-6cc5b9f4d5-fpg2x
 
 
