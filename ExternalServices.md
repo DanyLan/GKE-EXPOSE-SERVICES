@@ -11,7 +11,7 @@ If the external service has a valid domain name and you do not need port remappi
    
 ![](https://github.com/DanyLan/GKE-EXPOSE-SERVICES/blob/master/internalIP.png)
 
-3. Now that we have the IP address, let us create the service `kubectl create -f mongoservice.yaml`
+3. Now that we have the IP address, let us create the service with `kubectl create -f mongoservice.yaml`
 
        kind: Service
        apiVersion: v1
@@ -22,6 +22,18 @@ If the external service has a valid domain name and you do not need port remappi
         ports:
         - port: 27017
           targetPort: 27017
+          
+4. At this point, the service does not know where to send traffic to, so let us create an Endpoint that will receive traffic from the aforementioned service `kubectl create -f mongoendpoint.yaml` 
+          
+       kind: Endpoints
+       apiVersion: v1
+       metadata:
+        name: mongo
+       subsets:
+        - addresses:
+            - ip: 10.128.15.234
+          ports:
+            - port: 27017
           
       
  
