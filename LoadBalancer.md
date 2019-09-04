@@ -1,6 +1,8 @@
 # Loadbalancer
 
-A LoadBalancer service is the standard way to expose a service to the internet. On GKE, a Google Cloud controller will configure a [network load balancer](https://cloud.google.com/load-balancing/docs/network/) that will provide you with a single IP address that will forward all traffic to your service.
+A LoadBalancer service is the standard way to expose a service to the internet. On GKE, a Google Cloud controller will configure a [network load balancer](https://cloud.google.com/load-balancing/docs/network/) that will provide you with a single IP address that will forward all traffic to your service. This means you can send almost any kind of traffic to it, like HTTP, TCP, UDP, Websockets, gRPC, and so on.
+
+The downside is that you can only expose one service per LoadBalancer, and you have to pay for a LoadBalancer per service you want to advertised. In order to fix that enter the concept of Ingress.
 
 ![](https://github.com/DanyLan/GKE-EXPOSE-SERVICES/blob/master/Loadbalancer.png)
 
@@ -50,6 +52,20 @@ Now exec into a pod and test locally
     nmap localhost
     curl -v localhost:50001
 
+Here is a manifest for a Service of type LoadBalancer:
 
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: my-lb-service
+    spec:
+      type: LoadBalancer
+      selector:
+        app: products
+        department: sales
+      ports:
+      - protocol: TCP
+        port: 60000
+        targetPort: 50001
     
 
