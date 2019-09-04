@@ -7,11 +7,11 @@ If the external service has a valid domain name and you do not need port remappi
 1. Create your cluster
 2. Create a VM and get the internal IP and run a http service this way:
 
-`python -m SimpleHTTPServer 27017`
+       python -m SimpleHTTPServer 27017
    
 ![](https://github.com/DanyLan/GKE-EXPOSE-SERVICES/blob/master/internalIP.png)
 
-3. Now that we have the IP address, let us create the service
+3. Now that we have the IP address, let us create the service `kubectl create -f mongoservice.yaml`
 
        kind: Service
        apiVersion: v1
@@ -23,6 +23,6 @@ If the external service has a valid domain name and you do not need port remappi
         - port: 27017
           targetPort: 27017
           
-       kubectl create -f mongoservice.yaml
+      
  
  
