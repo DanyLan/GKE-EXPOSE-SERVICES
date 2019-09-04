@@ -67,7 +67,8 @@ Here is a manifest for a Service of type LoadBalancer:
       - protocol: TCP
         port: 60000
         targetPort: 50001
-
+        
+        
     kubectl apply -f my-lb-service.yaml
     
 View the service:
