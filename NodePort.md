@@ -164,3 +164,9 @@ Expose the service on the specified port internally within the cluster. That is,
 
 `targetPort`
 This is the port on the pod that the request gets sent to. Your application needs to be listening for network requests on this port for the service to work.
+
+# Downsides to NodePort
+
+1. You can only have one service per port
+2. You can onnly use ports 30000-32767
+3. If you Node IP address changes, you will need to deal with that.
