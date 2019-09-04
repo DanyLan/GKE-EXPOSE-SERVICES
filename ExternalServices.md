@@ -55,6 +55,7 @@ Install wget
     
 Inside nginx pod expected output is
 
+    wget mongo:27017
     --2019-09-04 17:28:33--  http://mongo:27017/
     Resolving mongo (mongo)... 10.12.2.169
     Connecting to mongo (mongo)|10.12.2.169|:27017... connected.
