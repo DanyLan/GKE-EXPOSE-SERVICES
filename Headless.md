@@ -73,10 +73,35 @@ spec:
         requests:
           storage: 1Gi</pre>
           
-If you do a `kubeclt get svc`, you will notice that there is no IP for clusterIP.
+If you do a `kubectl get svc`, you will notice that there is no IP for clusterIP.
 
     kubectl get svc
     NAME          TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)     AGE
     nginx         ClusterIP   None           <none>        80/TCP      7m31s
 
+At this point you may be asking yourself how communication will be made. If clusterIP is set to `none`, Kubernetes will not allocate an IP for the service, in this case, kube-dns will set a domain name for every endpoints that the service points to in the following format
+
+    <podname>.<servicename>.<namespace>.svc.cluster.local
+    
+Podname and namespace can be obtained this way
+
+    kubectl get pods --all-namespaces
+    NAMESPACE     NAME                                                           READY   STATUS    RESTARTS   AGE
+    default       web-0                                                          1/1     Running   0          125m
+    default       web-1                                                          1/1     Running   0          125m
+    default       web-2                                                          1/1     Running   0          124m
+
+For service name, `kubeclt get svc'
+
+    NAME          TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)     AGE
+    nginx         ClusterIP   None           <none>        80/TCP      126m
+    
+This can all be tested through busybox and pinging the pod this way
+
+    kubectl run -it --rm --restart=Never busybox --image=busybox sh
+    ping web-0.nginx.default.svc.cluster.local
+
+
+    
+    
 
