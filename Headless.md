@@ -14,7 +14,9 @@ A headless service is where we set the clusterIP as `None`:
       clusterIP: None
       selector:
         name: mariadb
-        
+
+kubectl create -f mariadb.yaml
+
 Check that mariadb service has no clusterIP this way:
 
     kubectl get svc
