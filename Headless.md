@@ -72,4 +72,11 @@ spec:
       resources:
         requests:
           storage: 1Gi</pre>
+          
+If you do a `kubeclt get svc`, you will notice that there is no IP for clusterIP.
+
+    kubectl get svc
+    NAME          TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)     AGE
+    nginx         ClusterIP   None           <none>        80/TCP      7m31s
+
 
