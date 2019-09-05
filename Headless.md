@@ -91,7 +91,7 @@ Podname and namespace can be obtained this way
     default       web-1                                                          1/1     Running   0          125m
     default       web-2                                                          1/1     Running   0          124m
 
-For service name, `kubeclt get svc'
+For service name, `kubeclt get svc`
 
     NAME          TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)     AGE
     nginx         ClusterIP   None           <none>        80/TCP      126m
