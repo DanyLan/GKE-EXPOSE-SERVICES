@@ -96,7 +96,7 @@ For service name, `kubeclt get svc`
     NAME          TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)     AGE
     nginx         ClusterIP   None           <none>        80/TCP      126m
     
-This can all be tested through busybox and pinging the pod this way
+This can all be tested through busybox and pinging the pod
 
     kubectl run -it --rm --restart=Never busybox --image=busybox sh
     / #ping web-0.nginx.default.svc.cluster.local
