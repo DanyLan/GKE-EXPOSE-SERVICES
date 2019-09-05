@@ -99,7 +99,7 @@ For service name, `kubeclt get svc'
 This can all be tested through busybox and pinging the pod this way
 
     kubectl run -it --rm --restart=Never busybox --image=busybox sh
-    ping web-0.nginx.default.svc.cluster.local
+    / #ping web-0.nginx.default.svc.cluster.local
 
 
     
