@@ -26,7 +26,7 @@ You can only access this service while inside the cluster. It is accessible from
 
 A NodePort exposes the following:
 
-- <NodeIP>:spec.ports[*].nodePort
+- [NodeIP]:spec.ports[*].nodePort
 - spec.clusterIp:spec.ports[*].port
   
 If you access this service on a nodePort from the node's external IP, it will route the request to spec.clusterIp:spec.ports[*].port, which will in turn route it to your spec.ports[*].targetPort, if set
@@ -34,7 +34,7 @@ If you access this service on a nodePort from the node's external IP, it will ro
 A LoadBalancer exposes the following:
 
 - spec.loadBalancerIp:spec.ports[*].port
-- <NodeIP>:spec.ports[*].nodePort
+- [NodeIP]:spec.ports[*].nodePort
 - spec.clusterIp:spec.ports[*].port
   
 You can access this service from your load balancer's IP address, which routes your request to a nodePort, which in turn routes the request to the clusterIP port. You can access this service as you would a NodePort or a ClusterIP service as well.
