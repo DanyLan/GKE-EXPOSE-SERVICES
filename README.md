@@ -37,7 +37,9 @@ A `LoadBalancer` exposes the following:
 - (NodeIP):spec.ports[*].nodePort
 - spec.clusterIp:spec.ports[*].port
   
-You can access this service from your load balancer's IP address, which routes your request to a nodePort, which in turn routes the request to the clusterIP port. You can access this service as you would a NodePort or a ClusterIP service as well.
+You can access this service from your loadbalancer's IP address, which routes your request to a nodePort, which in turn routes the request to the clusterIP port. You can access this service as you would a NodePort or a ClusterIP service as well.
 
-If you have a look at the yaml for a loadbalance, you will notice the clusterIP, nodePort and loadbalancer ip
+If you have a look at the yaml for a loadbalancer, you will notice the clusterIP, nodePort and loadbalancer ip
+
+
 
