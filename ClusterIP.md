@@ -130,7 +130,7 @@ Here is a manifest for a service of type ClusterIP:
      my-cip-service   ClusterIP   10.12.6.178   <none>        80/TCP    7s
      nginx-rwgnr      ClusterIP   10.12.7.114   <none>        80/TCP    13m
 
-Curl from nginx pod
+exec into the nginx pod and do a curl to the service from there
 
     curl -v 10.12.6.178
 
