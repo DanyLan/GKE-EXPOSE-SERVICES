@@ -41,5 +41,7 @@ You can access this service from your loadbalancer's IP address, which routes yo
 
 If you have a look at the yaml for a loadbalancer, you will notice the clusterIP, nodePort and loadbalancer ip
 
+![](https://github.com/DanyLan/GKE-EXPOSE-SERVICES/blob/master/lbyaml.png)
+
 
 
