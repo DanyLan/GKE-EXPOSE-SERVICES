@@ -17,10 +17,6 @@ The five types of Services are
 
 `LoadBalancer`: Exposes the service externally using a cloud provider’s load balancer. NodePort and ClusterIP services, to which the external load balancer will route, are automatically created.
 
-    ClusterIp    -> Expose service through **k8s cluster** with ip/name:port
-    NodePort     -> Expose service through **Internal network VM's** also external to k8s ip/name:port
-    LoadBalancer -> Expose service through **External world** or whatever you defined in your LB.
-
 A `ClusterIP` exposes the following:
 
 - spec.clusterIp:spec.ports[*].port
