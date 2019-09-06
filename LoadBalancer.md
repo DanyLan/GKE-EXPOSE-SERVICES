@@ -54,7 +54,7 @@ Now exec into a pod and test locally
 
 Here is a manifest for a Service of type LoadBalancer:
 
-    <pre>apiVersion: v1
+    apiVersion: v1
     kind: Service
     metadata:
       name: my-lb-service
@@ -66,10 +66,10 @@ Here is a manifest for a Service of type LoadBalancer:
       ports:
       - protocol: TCP
         port: 60000
-        targetPort: 50001</pre>
+        targetPort: 50001
         
         
-    kubectl apply -f my-lb-service.yaml
+Apply service: `kubectl apply -f my-lb-service.yaml`
     
 View the service:
 
