@@ -103,7 +103,12 @@ This can all be tested through busybox and pinging the pod
     kubectl run -it --rm --restart=Never busybox --image=busybox sh
     / #ping web-0.nginx.default.svc.cluster.local
 
+---------------------------
+ 
+The key is 'clusterIP: None'.
 
-    
+If clusterIP is not set, k8s will allocate one for the service automatically, also the kube-dns will set a domain name for the service, named mariadb.[namespace].svc.cluster.local, that's your first case.
+
+While if clusterIP is set to 'None', that means k8s doesn't allocate a ip for the service, in this case, kube-dns will set a domain name for every endpoints that the service points to, in your second case, it's mariadb-0.mariadb.[namespace].svc.cluster.local.   
     
 
