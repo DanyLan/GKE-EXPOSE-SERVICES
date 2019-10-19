@@ -1,4 +1,4 @@
-# ExternalName
+# External service
 
 Mapping external services to internal ones gives you the ability to bring those services into the your cluster.
 
